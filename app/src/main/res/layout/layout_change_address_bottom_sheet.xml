@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Pilih Alamat"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="8dp"
+        android:layout_height="400dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_rd_white_with_stroke"
+            android:elevation="3dp"
+            android:gravity="center"
+            app:hintTextColor="@color/dark_green">
+            <EditText
+                android:id="@+id/etSearchAddress"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="14sp"
+                android:hint="Cari alamat"
+                android:layout_weight="1"
+                android:textColorHint="@color/dark_green"
+                android:inputType="textAutoComplete"/>
+            <ImageView
+                android:id="@+id/btSearch"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="8dp"
+                app:srcCompat="@drawable/ic_search"
+                app:tint="@color/dark_green"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btCurrentLocation"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+            android:paddingHorizontal="12dp"
+            android:elevation="3dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_location_crosshairs"
+                app:tint="@color/dark_green"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi saat ini"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black_erie"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atur alamat sesuai lokasi kamu saat ini"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black_erie"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btSavedAddress"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+            android:paddingHorizontal="12dp"
+            android:elevation="3dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_bookmark_ol"
+                app:tint="@color/dark_green" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat tersimpan"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black_erie"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih alamat yang kamu simpan"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black_erie"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

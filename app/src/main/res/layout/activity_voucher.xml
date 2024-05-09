@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activities.checkout.VoucherActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="5dp"
+        android:paddingHorizontal="16dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/btBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_angle_left"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_gravity="center"
+            android:text="Voucher"
+            android:textColor="@color/dark_green"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rd_white_with_stroke"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/etVoucherCode"
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="14sp"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btUse"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="4dp"
+            android:clickable="true"
+            app:cardCornerRadius="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_green"
+                android:gravity="center"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Pakai"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcVoucherList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:paddingBottom="8dp"
+            tools:listitem="@layout/rc_voucher_list"/>
+    </ScrollView>
+
+</LinearLayout>

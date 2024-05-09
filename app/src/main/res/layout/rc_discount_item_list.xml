@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginVertical="4dp"
+    android:layout_marginHorizontal="16dp"
+    android:paddingHorizontal="16dp"
+    android:elevation="3dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/bg_rd_white_with_stroke">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dots"/>
+        <TextView
+            android:id="@+id/txtFoodListFoodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/poppins"
+            android:text="Nama Makanan"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/txtFoodListAvailQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="12 Porsi"
+            android:textColor="@color/black_erie"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/food_name"
+            tools:layout_conversion_absoluteHeight="22dp"
+            tools:layout_conversion_absoluteWidth="91dp" />
+        <TextView
+            android:id="@+id/txtFoodListCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Gratis Ongkir"
+            android:textColor="@color/black_erie"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/food_quantity"
+            app:layout_constraintTop_toBottomOf="@+id/txtFoodName"
+            tools:layout_conversion_absoluteHeight="22dp"
+            tools:layout_conversion_absoluteWidth="91dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/txtFoodListPrice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="20sp"
+            android:text="Rp.0.000"
+            android:textColor="@color/main_col"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btFoodListBuy"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_rd_white"
+            android:backgroundTint="@color/dark_green"
+            android:fontFamily="@font/poppins"
+            android:text="@string/txt_btn_beli_sekarang"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</LinearLayout>

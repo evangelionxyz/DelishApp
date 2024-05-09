@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/navigation_mystery_box"
+        android:icon="@drawable/ic_mystery_box"
+        android:title="Mystery Box"/>
+    <item
+        android:id="@+id/navigation_transactions"
+        android:icon="@drawable/ic_transaction"
+        android:title="Transactions"/>
+    <item
+        android:id="@+id/navigation_userprofile"
+        android:icon="@drawable/ic_person"
+        android:title="Profile"/>
+</menu>

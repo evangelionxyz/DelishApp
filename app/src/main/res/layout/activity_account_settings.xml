@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.profile.AccountSettingsActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="5dp"
+        android:paddingHorizontal="16dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/btBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_angle_left"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_gravity="center"
+            android:text="Pengaturan Akun"
+            android:textColor="@color/black_erie"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btLeave"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:paddingHorizontal="12dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/ic_leave"
+                android:backgroundTint="@android:color/holo_red_dark"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginHorizontal="16dp"
+                android:text="Keluar"
+                android:layout_weight="1"
+                android:textColor="@color/black_erie"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitXY"
+                android:scaleX="-1"
+                android:src="@drawable/ic_angle_left"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btDeleteAccount"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:paddingHorizontal="12dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/ic_trash"
+                android:backgroundTint="@android:color/holo_red_dark"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginHorizontal="16dp"
+                android:text="Hapus Akun"
+                android:layout_weight="1"
+                android:textColor="@color/black_erie"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitXY"
+                android:scaleX="-1"
+                android:src="@drawable/ic_angle_left"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
