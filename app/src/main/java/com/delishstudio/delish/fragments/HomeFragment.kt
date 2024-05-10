@@ -17,6 +17,7 @@ import com.delishstudio.delish.activities.categories.CategoryNonHalalActivity
 import com.delishstudio.delish.activities.categories.CategoryVeganActivity
 import com.delishstudio.delish.activities.adapters.DiscountItemListAdapter
 import com.delishstudio.delish.activities.checkout.CheckoutActivity
+import com.delishstudio.delish.activities.checkout.NotificationActivity
 import com.delishstudio.delish.activities.profile.MapPinpointActivity
 import com.delishstudio.delish.viewmodel.DiscountItemListViewModel
 
@@ -80,6 +81,11 @@ class HomeFragment : Fragment() {
 
         mBinding.btCart.setOnClickListener {
             val intent = Intent(activity, CheckoutActivity::class.java)
+            startActivity(intent)
+        }
+
+        mBinding.btNotification.setOnClickListener {
+            val intent = Intent(activity, NotificationActivity::class.java)
             startActivity(intent)
         }
 

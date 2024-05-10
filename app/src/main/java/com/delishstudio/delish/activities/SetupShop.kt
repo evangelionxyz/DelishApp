@@ -5,6 +5,7 @@ import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.model.ShopModel
 import com.delishstudio.delish.model.VoucherModel
 import com.delishstudio.delish.system.DatabaseStrRef
+import com.delishstudio.delish.viewmodel.DiscountItemListViewModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -236,6 +237,22 @@ class SetupShop {
                         )
                     )
 
+                    val foodA = FoodModel("Donat", 5, 5000, FoodCategory.CAMILAN)
+                    foodA.discount = true
+                    shopA.addFood(foodA)
+
+                    val foodB = FoodModel("Burger", 7, 13000, FoodCategory.MAKANAN_BERAT)
+                    foodB.discount = true
+                    shopA.addFood(foodB)
+
+                    val foodC = FoodModel("Bir", 12, 20000, FoodCategory.MINUMAN)
+                    foodC.discount = true
+                    shopA.addFood(foodC)
+
+                    val foodD = FoodModel("Roti", 12, 8000, FoodCategory.CAMILAN)
+                    foodD.discount = true
+                    shopA.addFood(foodD)
+
                     shopA.rewardPoints = 10
                     shopA.deliveryCost = 12000
                     shopB.rewardPoints = 3
@@ -274,7 +291,7 @@ class SetupShop {
             }
         }
 
-        private fun loadAllShops(callback: (Boolean) -> Unit) {
+        fun loadAllShops(callback: (Boolean) -> Unit) {
             if (!shopsLoaded) {
                 val userListRef = FirebaseDatabase.getInstance().getReference(DatabaseStrRef.SHOPS)
                 val query = userListRef.orderByKey()
@@ -289,6 +306,16 @@ class SetupShop {
                         }
                         shops.clear()
                         shops.addAll(shopsList)
+
+                        if (shopsList.isNotEmpty()) {
+                            DiscountItemListViewModel.foodList.clear()
+                            for (food in shopsList[0].foodList) {
+                                if (food.discount) {
+                                    DiscountItemListViewModel.foodList.add(food)
+                                }
+                            }
+                        }
+
                         callback(shopsList.isNotEmpty())
                     }
 
@@ -296,6 +323,9 @@ class SetupShop {
                         callback(false)
                     }
                 })
+
+
+
             } else {
                 callback(true)
             }

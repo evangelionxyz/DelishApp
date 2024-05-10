@@ -19,10 +19,10 @@ import com.delishstudio.delish.databinding.FragmentMysteryBoxBinding
 import com.delishstudio.delish.model.FoodCategory
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.activities.adapters.CategoryListAdapter
+import com.delishstudio.delish.model.UserManager
 
 class MysteryBoxFragment : Fragment() {
     private lateinit var mBinding: FragmentMysteryBoxBinding
-    private var mIsDialogShown: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mBinding = FragmentMysteryBoxBinding.inflate(inflater, container, false)
@@ -33,13 +33,11 @@ class MysteryBoxFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupAdapters()
 
-        if(savedInstanceState == null) {
-            showDialog()
-        }
+        showDialog()
     }
 
     private fun showDialog() {
-        if(mIsDialogShown) {
+        if(UserManager.Main.dismissedMysteryWarn) {
             return
         }
 
@@ -54,10 +52,6 @@ class MysteryBoxFragment : Fragment() {
             dialog.dismiss()
         }
 
-        dialog.setOnDismissListener{
-            mIsDialogShown = false
-        }
-
         dialog.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
@@ -67,7 +61,9 @@ class MysteryBoxFragment : Fragment() {
         dialog.window?.setGravity(Gravity.CENTER)
 
         dialog.show()
-        mIsDialogShown = true
+
+        UserManager.Main.dismissedMysteryWarn = true
+        UserManager.Update()
     }
 
     private fun setupAdapters() {

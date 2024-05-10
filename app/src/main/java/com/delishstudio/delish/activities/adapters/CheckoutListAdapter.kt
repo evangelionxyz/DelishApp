@@ -85,8 +85,12 @@ class CheckoutListAdapter()
     override fun onBindViewHolder(holder: FoodHolder, position: Int) {
         val food =  UserManager.Main.transaction.foodList[position]
         holder.name.text = food.name
+
         val shop = Utils.getShop(food.shopId)
-        holder.address.text = shop!!.name
+        if (shop != null) {
+            holder.address.text = shop.name
+        }
+
         holder.price.text = Utils.idFormatedCurrency(food.price)
         holder.counter.text = food.buyQuantity.toString()
 

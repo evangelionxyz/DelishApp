@@ -2,8 +2,10 @@ package com.delishstudio.delish.activities.categories
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.delishstudio.delish.R
 import com.delishstudio.delish.activities.SetupShop
 import com.delishstudio.delish.activities.adapters.CategoryListAdapter
 import com.delishstudio.delish.databinding.ActivityCategoryFoodBinding
@@ -12,14 +14,30 @@ import com.delishstudio.delish.model.FoodCategory
 
 class CategoryMinumanActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityCategoryFoodBinding
-    private var foodList: ArrayList<FoodModel> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityCategoryFoodBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+        setupButtons()
         setupAdapters()
+    }
+
+    private fun setupButtons() {
+        mBinding.btNearby.setOnClickListener{
+            mBinding.btNearby.setTextColor(getColor(R.color.white))
+            mBinding.btNearby.backgroundTintList = ContextCompat.getColorStateList(this, R.color.dark_green)
+            mBinding.btRecomendation.setTextColor(getColor(R.color.black_erie))
+            mBinding.btRecomendation.backgroundTintList = ContextCompat.getColorStateList(this, R.color.white)
+        }
+
+        mBinding.btRecomendation.setOnClickListener{
+            mBinding.btRecomendation.setTextColor(getColor(R.color.white))
+            mBinding.btRecomendation.backgroundTintList = ContextCompat.getColorStateList(this, R.color.dark_green)
+            mBinding.btNearby.setTextColor(getColor(R.color.black_erie))
+            mBinding.btNearby.backgroundTintList = ContextCompat.getColorStateList(this, R.color.white)
+        }
     }
 
     private fun setupAdapters() {

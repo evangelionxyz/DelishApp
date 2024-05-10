@@ -1,6 +1,8 @@
 package com.delishstudio.delish.activities.checkout
 
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,13 +18,25 @@ class VoucherActivity : AppCompatActivity() {
         mBinding = ActivityVoucherBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+        mBinding.btBack.setOnClickListener{
+            super.onBackPressedDispatcher.onBackPressed()
+        }
+
         setupAdapters()
     }
 
     private fun setupAdapters() {
         val recyclerView: RecyclerView = mBinding.rcVoucherList
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = VoucherListAdapter(SetupShop.vouchers)
+
+        val clickable = intent.getBooleanExtra("isClickable", false)
+        if (!clickable) {
+            val params = LinearLayout.LayoutParams(0, 0)
+            params.topMargin = 0
+            mBinding.layoutUseVoucher.layoutParams = params
+        }
+
+        val adapter = VoucherListAdapter(SetupShop.vouchers, clickable)
 
         recyclerView.adapter = adapter
     }

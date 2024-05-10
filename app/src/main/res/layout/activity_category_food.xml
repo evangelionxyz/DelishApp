@@ -21,68 +21,50 @@
                 android:id="@+id/makanan_berat_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:src="@drawable/image_example"/>
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:layout_marginVertical="8dp">
-                <androidx.cardview.widget.CardView
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btNearby"
                     android:layout_width="165dp"
                     android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="8dp"
-                    android:clickable="true"
-                    app:cardCornerRadius="20dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/dark_green"
-                        android:gravity="center"
-                        android:padding="10dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_medium"
-                            android:text="Nearby"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/white"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/bg_rd_white"
+                    android:backgroundTint="@color/dark_green"
+                    android:elevation="10dp"
+                    android:text="Nearby"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btRecomendation"
                     android:layout_width="165dp"
                     android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="8dp"
-                    android:clickable="true"
-                    app:cardCornerRadius="20dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_rd_white_with_stroke"
-                        android:gravity="center"
-                        android:padding="10dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_medium"
-                            android:text="Recomendation"
-                            android:textAlignment="center"
-                            android:textColor="@color/black_erie"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/bg_rd_white"
+                    android:text="Recomendation"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/checkout_delivery"
+                    app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcCategoryFood"

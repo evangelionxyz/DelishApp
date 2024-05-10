@@ -61,6 +61,7 @@ class ProfileFragment : Fragment() {
 
         mBinding.btPromos.setOnClickListener {
             val intent = Intent(activity, VoucherActivity::class.java)
+            intent.putExtra("isClickable", false)
             startActivity(intent)
         }
 

@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Delish"
         tools:targetApi="tiramisu">
         <activity
+            android:name=".activities.checkout.NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.profile.ChangeLanguageActivity"
             android:exported="false" />
         <activity

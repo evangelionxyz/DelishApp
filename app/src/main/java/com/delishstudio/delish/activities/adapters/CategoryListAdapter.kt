@@ -175,24 +175,31 @@ class CategoryListAdapter(val foodList: ArrayList<FoodModel>)
         when(food.cat){
             FoodCategory.MAKANAN_BERAT -> {
                 food.imgId = R.drawable.img_heavy_food_cat
+                holder.bg.setBackgroundResource(R.drawable.background_light_blue)
             }
             FoodCategory.NON_HALAL -> {
                 food.imgId = R.drawable.img_non_halal_food
+                holder.bg.setBackgroundResource(R.drawable.background_pink)
             }
             FoodCategory.CAMILAN -> {
                 food.imgId = R.drawable.img_beverages_cat
+                holder.bg.setBackgroundResource(R.drawable.background_orange)
             }
             FoodCategory.MINUMAN -> {
                 food.imgId = R.drawable.img_drinks_cat
+                holder.bg.setBackgroundResource(R.drawable.background_pink)
             }
             FoodCategory.BAHAN_MAKANAN -> {
                 food.imgId = R.drawable.img_groceries_cat
+                holder.bg.setBackgroundResource(R.drawable.background_light_blue)
             }
             FoodCategory.VEGAN -> {
                 food.imgId = R.drawable.img_vegan_cat
+                holder.bg.setBackgroundResource(R.drawable.background_orange)
             }
             FoodCategory.MYSTERY_BOX -> {
                 food.imgId = R.drawable.img_mysterybox
+                holder.bg.setBackgroundResource(R.drawable.background_light_blue)
             }
         }
 

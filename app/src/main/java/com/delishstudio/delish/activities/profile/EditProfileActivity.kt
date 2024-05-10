@@ -33,8 +33,9 @@ class EditProfileActivity : AppCompatActivity() {
             super.onBackPressedDispatcher.onBackPressed()
         }
 
-        mBinding.btChangeProfilePicture.setOnClickListener {
-        }
+        // TODO: Implement Change Profile Picture
+        //mBinding.btChangeProfilePicture.setOnClickListener {
+        //}
 
         mBinding.btSave.setOnClickListener {
             UserManager.Main.userName = mBinding.etUserName.text.toString()

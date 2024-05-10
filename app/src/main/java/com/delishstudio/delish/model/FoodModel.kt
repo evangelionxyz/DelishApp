@@ -10,15 +10,13 @@ data class FoodModel(
     var rating: Double = 0.0
     var quaUnit: String = unit
     var buyQuantity: Int = 0
-    var rewardPoints: Int = 0
     var imgSrc: String = ""
     var imgId: Int = -1
     var distance: Double = 0.0
     var orderMsgToRestaurant: String = ""
     var id: String = ""
     var shopId: String = ""
-
-
+    var discount: Boolean = false
 
     fun getCategoryString(): String {
         return when(cat){

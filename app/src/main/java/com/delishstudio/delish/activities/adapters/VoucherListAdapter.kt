@@ -12,7 +12,7 @@ import com.delishstudio.delish.model.UserManager
 import com.delishstudio.delish.model.VoucherModel
 import com.delishstudio.delish.system.Utils
 
-class VoucherListAdapter(var vouchers: ArrayList<VoucherModel>) : RecyclerView.Adapter<VoucherListAdapter.VoucherHolder>() {
+class VoucherListAdapter(var vouchers: ArrayList<VoucherModel>, val clickable: Boolean) : RecyclerView.Adapter<VoucherListAdapter.VoucherHolder>() {
 
     inner class VoucherHolder(binding: RcVoucherListBinding) : RecyclerView.ViewHolder(binding.root) {
         var name: TextView = binding.txtVoucherName
@@ -21,22 +21,24 @@ class VoucherListAdapter(var vouchers: ArrayList<VoucherModel>) : RecyclerView.A
         var layout: LinearLayout = binding.lyVoucherList
 
         init {
-            layout.setOnClickListener {
-                val voucher = vouchers[bindingAdapterPosition]
-                val tr = UserManager.Main.transaction
 
-                if (tr.totalCost > voucher.minSpend) {
-                    UserManager.Main.transaction.voucher = vouchers[bindingAdapterPosition]
-                    notifyItemChanged(bindingAdapterPosition)
-                } else {
-                    Utils.ShortToastText(itemView.context, "Minimum belanja masih kurang")
+            if (clickable) {
+                layout.setOnClickListener {
+                    val voucher = vouchers[bindingAdapterPosition]
+                    val tr = UserManager.Main.transaction
+
+                    if (tr.totalCost > voucher.minSpend) {
+                        UserManager.Main.transaction.voucher = vouchers[bindingAdapterPosition]
+                        notifyItemChanged(bindingAdapterPosition)
+                    } else {
+                        Utils.ShortToastText(itemView.context, "Minimum belanja masih kurang")
+                    }
+
+                    val intent = Intent(itemView.context, CheckoutActivity::class.java)
+                    itemView.context.startActivity(intent)
                 }
-
-                val intent = Intent(itemView.context, CheckoutActivity::class.java)
-                itemView.context.startActivity(intent)
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VoucherHolder {

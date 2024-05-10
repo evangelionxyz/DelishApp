@@ -31,12 +31,15 @@ class TransactionListAdapter (var transactions: ArrayList<TransactionModel>)
 
     override fun onBindViewHolder(holder: TransactionHolder, position: Int) {
         val trs = transactions[position]
-        val shop = Utils.getShop(trs.foodList[0].shopId)
-        holder.shopName.text = shop!!.name
 
-        if (shop.name.length > 32) {
-            val txt = shop.name.subSequence(0, 32)
-            holder.shopName.text = "${txt}..."
+        val shop = Utils.getShop(trs.foodList[0].shopId)
+
+        if (shop != null) {
+            holder.shopName.text = shop!!.name
+            if (shop.name.length > 32) {
+                val txt = shop.name.subSequence(0, 32)
+                holder.shopName.text = "${txt}..."
+            }
         }
 
         holder.itemCount.setText("${trs.foodList.size} items")

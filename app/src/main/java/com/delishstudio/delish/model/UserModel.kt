@@ -15,6 +15,7 @@ class UserModel(
     var profileImageUrl: String = ""
     var rewardPoints: Int = 0
     var password: String = ""
+    var dismissedMysteryWarn: Boolean = false
 
     var mainAddressIndex: Int = -1
 

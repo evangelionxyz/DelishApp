@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.activities.checkout.CheckoutActivity
 import com.delishstudio.delish.databinding.RcDiscountItemListBinding
+import com.delishstudio.delish.model.UserManager
 import com.delishstudio.delish.system.Utils
 
 // FoodList untuk list semua makanan yang ada di aplikasi
@@ -25,6 +26,20 @@ class DiscountItemListAdapter: RecyclerView.Adapter<DiscountItemListAdapter.View
 
         init {
             buyButton.setOnClickListener{
+                val currentFood = itemDiffer.currentList[bindingAdapterPosition]
+
+                val user = UserManager.Main
+                val tr = user.transaction
+                if (tr.foodList.isNotEmpty()) {
+                    if (!tr.foodList[0].discount) {
+                        user.transaction.foodList.clear()
+                    }
+                }
+
+                currentFood.buyQuantity++
+                tr.foodList.add(currentFood)
+                tr.calcOrderdFoodCost()
+
                 val intent = Intent(itemView.context, CheckoutActivity::class.java)
                 itemView.context.startActivity(intent)
             }
@@ -55,7 +70,7 @@ class DiscountItemListAdapter: RecyclerView.Adapter<DiscountItemListAdapter.View
             mBinding.apply {
                 name.text = item.name
                 price.text = Utils.idFormatedCurrency(item.price)
-                quantity.text = item.quantity.toString()
+                quantity.text = "${item.quantity} ${item.quaUnit}"
                 category.text = item.getCategoryString()
             }
         }

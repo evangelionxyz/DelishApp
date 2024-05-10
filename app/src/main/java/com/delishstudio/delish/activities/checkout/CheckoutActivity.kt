@@ -179,6 +179,7 @@ class CheckoutActivity : AppCompatActivity(), CheckoutListAdapter.OnUpdateListen
         }
         mBinding.btCheckoutUseVoucher.setOnClickListener {
             val intent = Intent(this, VoucherActivity::class.java)
+            intent.putExtra("isClickable", true)
             startActivity(intent)
         }
     }
@@ -201,7 +202,9 @@ class CheckoutActivity : AppCompatActivity(), CheckoutListAdapter.OnUpdateListen
             tr.deliveryCost = 0
         } else {
             val shop = Utils.getShop(tr.foodList[0].shopId)
-            tr.deliveryCost = shop!!.deliveryCost
+            if (shop != null) {
+                tr.deliveryCost = shop.deliveryCost
+            }
         }
 
         val intent = Intent(this, OrderStatusActivity::class.java)

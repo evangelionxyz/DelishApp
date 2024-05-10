@@ -97,9 +97,7 @@ class DeleteAccountActivity : AppCompatActivity() {
                     finish()
                 }
                 else {
-                    val e = task.exception.toString()
-
-                    Toast.makeText(this, "Failed to delete your account", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Login again to delete your account", Toast.LENGTH_SHORT).show()
                     dialog.dismiss()
                 }
             }
