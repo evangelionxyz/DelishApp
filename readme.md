@@ -11,7 +11,7 @@ Delish merupakan aplikasi redistribusi makanan yang memiliki misi untuk menguran
 by Evangelion Manuhutu | Kania Selmanita Agina | Edsel Septa Haryanto
 <br>At Find It Hackathon
 
-Video dan Slide [Google Drive](https://drive.google.com/drive/folders/1WqrAe5bNpHhQCEXR7GMHHNSg0YcO9jI8])
+Video dan Slide [Google Drive](https://drive.google.com/drive/folders/1WqrAe5bNpHhQCEXR7GMHHNSg0YcO9jI8?usp=drive_link)
 
 
 <div style="display:flex">
