@@ -5,9 +5,14 @@
 # Delish App
 ## An android app that helps reduce the problem of Food Waste for a healthier Indonesia.
 
-Developed with ❤️
-<br>by Evangelion Manuhutu | Kania Selmanita Agina | Edsel Septa Haryanto
+Delish merupakan aplikasi redistribusi makanan yang memiliki misi untuk mengurangi makanan yang terbuang secara sia-sia serta mengelola dan meredistribusi kepada yang lebih membutuhkan.
+
+### Developed with ❤️
+by Evangelion Manuhutu | Kania Selmanita Agina | Edsel Septa Haryanto
 <br>At Find It Hackathon
+
+Video dan Slide [Google Drive](https://drive.google.com/drive/folders/1WqrAe5bNpHhQCEXR7GMHHNSg0YcO9jI8])
+
 
 <div style="display:flex">
   <img src="res/home.png" width="130" height="280">
